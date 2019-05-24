@@ -38,15 +38,19 @@ namespace AccountingSoftware
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            string Password;
-            Password = "harry";
-            MessageBox.Show(password.Text);
-            if (password.Text == "Harry")
+            string username;
+            username = "harry";
+            string password;
+            password = "password";
+            if (Username.Text.ToLower() == username) 
             {
-                MessageBox.Show("Username and password are Correct");
-                this.Hide();
-                Form2 f2 = new Form2();
-                f2.ShowDialog();
+                if (Password.Text == password)
+                {
+                    MessageBox.Show("Username and password are Correct");
+                    this.Hide();
+                    Form2 f2 = new Form2();
+                    f2.ShowDialog();
+                } 
             }
         }
     }

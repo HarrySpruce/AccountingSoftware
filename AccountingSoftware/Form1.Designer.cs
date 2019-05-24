@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
@@ -45,14 +45,14 @@
             this.Username.Size = new System.Drawing.Size(100, 20);
             this.Username.TabIndex = 0;
             // 
-            // password
+            // Password
             // 
-            this.password.Location = new System.Drawing.Point(68, 111);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(100, 20);
-            this.password.TabIndex = 1;
-            this.password.UseSystemPasswordChar = true;
-            this.password.TextChanged += new System.EventHandler(this.Password_TextChanged);
+            this.Password.Location = new System.Drawing.Point(68, 111);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(100, 20);
+            this.Password.TabIndex = 1;
+            this.Password.UseSystemPasswordChar = true;
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // label1
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.password);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(618, 307);
@@ -115,7 +115,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox Username;
-        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
