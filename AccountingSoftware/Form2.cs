@@ -23,9 +23,11 @@ namespace AccountingSoftware
 
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
+            dt.Columns.Add("Date of Birth");
 
             dt.Rows.Add("01", "Harry");
             dt.Rows.Add("02", "jeff");
+            dt.Rows.Add("03", "Micheal");
 
             dataGridView1.DataSource = dt;
 
