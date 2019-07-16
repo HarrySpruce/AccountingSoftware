@@ -8,9 +8,9 @@ currently being supported with security updates.
 | Version | Supported          |
 | ------- | ------------------ |
 | 0.x     | :x:                |
-| 1.x.x   | :white_check_mark: |
-| 2.x.x   | :white_check_mark: |
-| < 2.0   | :white_check_mark: |
+| 1.x.x   | :heavy_check_mark: |
+| 2.x.x   | :heavy_check_mark: |
+| < 2.0   | :heavy_check_mark: |
 
 ## Reporting a Vulnerability
 
