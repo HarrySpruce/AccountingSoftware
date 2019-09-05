@@ -7,10 +7,10 @@ currently being supported with security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.x     | :x:                |
-| 1.x.x   | :heavy_check_mark: |
-| 2.x.x   | :heavy_check_mark: |
-| < 2.0   | :heavy_check_mark: |
+| 0.x     | :heavy_check_mark: |
+| 1.x.x   | :x:                |
+| 2.x.x   | :x:                |
+| < 2.0   | :x:                |
 
 ## Reporting a Vulnerability
 
