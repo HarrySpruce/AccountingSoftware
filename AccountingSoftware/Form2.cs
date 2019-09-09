@@ -18,12 +18,14 @@ namespace AccountingSoftware
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        public void Form2_Load(object sender, EventArgs e)
         {
+            //Creates a table upon form load aswell as populating the table from files located in C:\Temp
             int NumberOfLines = 50;
             string[] ListLines = new string[NumberOfLines];
             string[] createText = { "Harry", "Jeff", "Micheal" };
             string path = @"C:\Temp\Names.txt";
+            //Checks to see if the file exists before creating one and populating it with data.
             if (!File.Exists(path))
             {
                 File.WriteAllLines(path, createText, Encoding.UTF8);
@@ -59,6 +61,11 @@ namespace AccountingSoftware
         private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void Button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
