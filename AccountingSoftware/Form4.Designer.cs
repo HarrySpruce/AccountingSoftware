@@ -36,9 +36,10 @@
             // 
             // Confirm
             // 
-            this.Confirm.Location = new System.Drawing.Point(13, 64);
+            this.Confirm.Location = new System.Drawing.Point(20, 98);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(75, 23);
+            this.Confirm.Size = new System.Drawing.Size(112, 35);
             this.Confirm.TabIndex = 0;
             this.Confirm.Text = "Confirm";
             this.Confirm.UseVisualStyleBackColor = true;
@@ -46,9 +47,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 38);
+            this.textBox1.Location = new System.Drawing.Point(20, 58);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.MaxLength = 4;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
+            this.textBox1.Size = new System.Drawing.Size(110, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.UseSystemPasswordChar = true;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
@@ -56,22 +59,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Admin Code";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 227);
+            this.ClientSize = new System.Drawing.Size(462, 349);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Confirm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form4";
             this.Text = "Admin Password Entry";
             this.Load += new System.EventHandler(this.Form4_Load);

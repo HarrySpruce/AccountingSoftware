@@ -13,6 +13,9 @@ namespace AccountingSoftware
 {
     public partial class Form2 : Form
     {
+        public string globalname1 = "";
+        public string globalname2 = "";
+        public string globalname3 = "";
         public Form2()
         {
             InitializeComponent();
@@ -25,6 +28,14 @@ namespace AccountingSoftware
             string[] ListLines = new string[NumberOfLines];
             string[] createText = { "Harry", "Jeff", "Micheal" };
             string path = @"C:\Temp\Names.txt";
+            // Create a new file     
+            using (FileStream fs = File.Create(@"C:\Temp\Names.txt"))
+            {
+                // Add some text to file    
+                Byte[] title = new UTF8Encoding(true).GetBytes("");
+                fs.Write(title, 0, title.Length);
+            }
+
             //Checks to see if the file exists before creating one and populating it with data.
             if (!File.Exists(path))
             {
@@ -35,9 +46,9 @@ namespace AccountingSoftware
             {
                 ListLines[i] = tr.ReadLine();
             }
-            string name1 = ListLines[1];
-            string name2 = ListLines[2];
-            string name3 = ListLines[3];
+            globalname1 = ListLines[1];
+            globalname2 = ListLines[2];
+            globalname3 = ListLines[3];
             DataTable dt = new DataTable();
             tr.Close();
      
@@ -45,10 +56,11 @@ namespace AccountingSoftware
             dt.Columns.Add("Name");
             dt.Columns.Add("Date of Birth");
 
-            dt.Rows.Add("01", name1);
-            dt.Rows.Add("02", name2);
-            dt.Rows.Add("03", name3);
-
+            dt.Rows.Add("01", globalname1);
+            dt.Rows.Add("02", globalname2);
+            dt.Rows.Add("03", globalname3);
+            
+            
             dataGridView1.DataSource = dt;
 
         }
@@ -65,7 +77,14 @@ namespace AccountingSoftware
 
         public void Button1_Click(object sender, EventArgs e)
         {
-            
+            int NumberOfLines = 50;
+            string[] createText = { globalname1 + globalname2 + globalname3 };
+            string path = @"C:\Temp\Names.txt";
+            if (!File.Exists(path))
+            {
+                File.WriteAllLines(path, createText, Encoding.UTF8);
+            }
+            TextReader tr = new StreamReader(@"C:\Temp\Names.txt");
         }
     }
 }
