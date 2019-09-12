@@ -13,6 +13,12 @@ namespace AccountingSoftware
 {
     public partial class Form2 : Form
     {
+        public string Notes;
+        public string customerName;
+        public string customerEmail;
+        public string invoiceNumber;
+        public DateTime DateTime1;
+        public DateTime DateTime2;
         public string globalname1 = "";
         public string globalname2 = "";
         public string globalname3 = "";
@@ -51,7 +57,7 @@ namespace AccountingSoftware
             globalname3 = ListLines[3];
             DataTable dt = new DataTable();
             tr.Close();
-     
+
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
             dt.Columns.Add("Date of Birth");
@@ -59,8 +65,8 @@ namespace AccountingSoftware
             dt.Rows.Add("01", globalname1);
             dt.Rows.Add("02", globalname2);
             dt.Rows.Add("03", globalname3);
-            
-            
+
+
             dataGridView1.DataSource = dt;
 
         }
@@ -77,7 +83,6 @@ namespace AccountingSoftware
 
         public void Button1_Click(object sender, EventArgs e)
         {
-            int NumberOfLines = 50;
             string[] createText = { globalname1 + globalname2 + globalname3 };
             string path = @"C:\Temp\Names.txt";
             if (!File.Exists(path))
@@ -85,6 +90,37 @@ namespace AccountingSoftware
                 File.WriteAllLines(path, createText, Encoding.UTF8);
             }
             TextReader tr = new StreamReader(@"C:\Temp\Names.txt");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_Click(object sender, System.EventArgs e)
+        {
+            textBox1.Text = String.Empty;
+        }
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = String.Empty;
+        }
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+        }
+        private void textBox4_Click(object sender, EventArgs e)
+        {
+            textBox4.Clear();
+            textBox4.ForeColor = Color.Black;
+        }
+
+        private void saveButton2_Click(object sender, EventArgs e)
+        {
+            Notes = textBox4.Text;
+            customerName = textBox1.Text;
+            customerEmail = textBox2.Text;
+
         }
     }
 }

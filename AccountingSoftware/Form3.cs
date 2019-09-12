@@ -28,5 +28,10 @@ namespace AccountingSoftware
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
