@@ -137,12 +137,12 @@ namespace AccountingSoftware
                 new string[]{Notes},
                 new string[]{customerName},
                 new string[]{customerEmail},
-                new string[]{invoiceNumber}
+                new string[]{invoiceNumber},
+                new string[]{"************"}
             };
         int ilength = inaOutput.GetLength(0);
             for (int i = 0; i < ilength; i++)
                 sbOutput.AppendLine(string.Join(strSeperator, inaOutput[i]));
-            File.WriteAllText(strFilePath, sbOutput.ToString());
             File.AppendAllText(strFilePath, sbOutput.ToString());
         }
 
