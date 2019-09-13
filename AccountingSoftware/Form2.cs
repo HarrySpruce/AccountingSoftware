@@ -22,6 +22,7 @@ namespace AccountingSoftware
         public string globalname1 = "";
         public string globalname2 = "";
         public string globalname3 = "";
+        public string globalname4 = "";
         public Form2()
         {
             InitializeComponent();
@@ -60,12 +61,15 @@ namespace AccountingSoftware
 
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
-            dt.Columns.Add("Date of Birth");
+            dt.Columns.Add("Invoice Date");
+            dt.Columns.Add("Due Date");
+            dt.Columns.Add("Order Reference");
+
 
             dt.Rows.Add("01", globalname1);
             dt.Rows.Add("02", globalname2);
             dt.Rows.Add("03", globalname3);
-
+            dt.Rows.Add("04", globalname4);
 
             dataGridView1.DataSource = dt;
 
@@ -117,10 +121,74 @@ namespace AccountingSoftware
 
         private void saveButton2_Click(object sender, EventArgs e)
         {
-            Notes = textBox4.Text;
-            customerName = textBox1.Text;
-            customerEmail = textBox2.Text;
+        Notes = textBox4.Text;
+        customerName = textBox1.Text;
+        customerEmail = textBox2.Text;
+        invoiceNumber = textBox3.Text;
+            //if this doesnt work change it here
+            string folderString = @"C:\Temp";
+            System.IO.Directory.CreateDirectory(folderString);
+            string strFilePath = @"C:\temp\testfile.csv";
+        string strSeperator = ",";
+        StringBuilder sbOutput = new StringBuilder();
 
+            string[][] inaOutput = new string[][]
+            {
+                new string[]{Notes},
+                new string[]{customerName},
+                new string[]{customerEmail},
+                new string[]{invoiceNumber}
+            };
+        int ilength = inaOutput.GetLength(0);
+            for (int i = 0; i < ilength; i++)
+                sbOutput.AppendLine(string.Join(strSeperator, inaOutput[i]));
+            File.WriteAllText(strFilePath, sbOutput.ToString());
+            File.AppendAllText(strFilePath, sbOutput.ToString());
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime1 = dateTimePicker1.Value;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime2 = dateTimePicker2.Value;
+        }
+
+        private void textBox5_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+    (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
