@@ -45,15 +45,6 @@ namespace AccountingSoftware
                 f1.ShowDialog();
             }
         }
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
@@ -68,11 +59,6 @@ namespace AccountingSoftware
                 Form2 f2 = new Form2();
                 f2.ShowDialog();
             }
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
         }
     }
 

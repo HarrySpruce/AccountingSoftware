@@ -17,11 +17,6 @@ namespace AccountingSoftware
             InitializeComponent();
         }
 
-        private void Overview_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,9 +24,6 @@ namespace AccountingSoftware
             f2.ShowDialog();
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
 
-        }
     }
 }

@@ -53,7 +53,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Overview";
             this.Text = "Overview";
-            this.Load += new System.EventHandler(this.Overview_Load);
             this.ResumeLayout(false);
 
         }

@@ -68,7 +68,6 @@
             this.usernameLabel.Size = new System.Drawing.Size(83, 20);
             this.usernameLabel.TabIndex = 2;
             this.usernameLabel.Text = "Username";
-            this.usernameLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // passwordLabel
             // 
@@ -79,7 +78,6 @@
             this.passwordLabel.Size = new System.Drawing.Size(78, 20);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Password";
-            this.passwordLabel.Click += new System.EventHandler(this.Label2_Click);
             // 
             // fileSystemWatcher1
             // 

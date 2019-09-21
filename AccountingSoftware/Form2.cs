@@ -74,17 +74,6 @@ namespace AccountingSoftware
             dataGridView1.DataSource = dt;
 
         }
-
-        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void TableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void Button1_Click(object sender, EventArgs e)
         {
             string[] createText = { globalname1 + globalname2 + globalname3 };
@@ -94,11 +83,6 @@ namespace AccountingSoftware
                 File.WriteAllLines(path, createText, Encoding.UTF8);
             }
             TextReader tr = new StreamReader(@"C:\Temp\Names.txt");
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void textBox1_Click(object sender, System.EventArgs e)

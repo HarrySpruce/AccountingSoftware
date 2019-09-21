@@ -54,7 +54,6 @@
             this.adminCode.Size = new System.Drawing.Size(110, 26);
             this.adminCode.TabIndex = 1;
             this.adminCode.UseSystemPasswordChar = true;
-            this.adminCode.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // enterCodeLabel
             // 
@@ -65,7 +64,6 @@
             this.enterCodeLabel.Size = new System.Drawing.Size(139, 20);
             this.enterCodeLabel.TabIndex = 2;
             this.enterCodeLabel.Text = "Enter Admin Code";
-            this.enterCodeLabel.Click += new System.EventHandler(this.Label1_Click);
             // 
             // Form4
             // 
@@ -79,7 +77,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form4";
             this.Text = "Admin Password Entry";
-            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
