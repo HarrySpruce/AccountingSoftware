@@ -13,6 +13,7 @@ namespace AccountingSoftware
 {
     public partial class Form2 : Form
     {
+        //Creates all public strings
         public string Notes;
         public string customerName;
         public string customerEmail;
@@ -58,14 +59,14 @@ namespace AccountingSoftware
             globalname3 = ListLines[3];
             DataTable dt = new DataTable();
             tr.Close();
-
+            //creates columns in the table
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
             dt.Columns.Add("Invoice Date");
             dt.Columns.Add("Due Date");
             dt.Columns.Add("Order Reference");
 
-
+            //sets table rows to a number and imported variables from C:\temp
             dt.Rows.Add("01", globalname1);
             dt.Rows.Add("02", globalname2);
             dt.Rows.Add("03", globalname3);

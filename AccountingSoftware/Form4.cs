@@ -55,9 +55,8 @@ namespace AccountingSoftware
             }
             if (PasswordText == true)
             {
-                this.Hide();
-                Form2 f2 = new Form2();
-                f2.ShowDialog();
+                Form6 f6 = new Form6();
+                f6.ShowDialog();
             }
         }
     }
