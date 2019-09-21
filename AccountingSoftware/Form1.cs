@@ -30,7 +30,7 @@ namespace AccountingSoftware
         private void Form1_Load(object sender, EventArgs e)
         {
             Form form1 = new Form();
-            form1.AcceptButton = button1;
+            form1.AcceptButton = loginButton;
         }
 
         private void Password_TextChanged(object sender, EventArgs e)
@@ -43,9 +43,9 @@ namespace AccountingSoftware
             username = "harry";
             string password;
             password = "password";
-            if (Username.Text.ToLower() == username) 
+            if (usernameTextbox.Text.ToLower() == username) 
             {
-                if (Password.Text == password)
+                if (passwordTextbox.Text == password)
                 {
                     MessageBox.Show("Username and password are Correct");
                     this.Hide();

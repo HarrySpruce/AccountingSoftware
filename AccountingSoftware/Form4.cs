@@ -58,7 +58,7 @@ namespace AccountingSoftware
         private void Confirm_Click(object sender, EventArgs e)
         {
             bool PasswordText = false;
-            if (textBox1.Text == "0405")
+            if (adminCode.Text == "0405")
             {
                 PasswordText = true;
             }

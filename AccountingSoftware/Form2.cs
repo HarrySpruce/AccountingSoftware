@@ -103,11 +103,11 @@ namespace AccountingSoftware
 
         private void textBox1_Click(object sender, System.EventArgs e)
         {
-            textBox1.Text = String.Empty;
+            customerNameTextBox.Text = String.Empty;
         }
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = String.Empty;
+            customerEmailTextBox.Text = String.Empty;
         }
         private void textBox3_Click(object sender, EventArgs e)
         {
@@ -115,15 +115,15 @@ namespace AccountingSoftware
         }
         private void textBox4_Click(object sender, EventArgs e)
         {
-            textBox4.Clear();
-            textBox4.ForeColor = Color.Black;
+            notesTextbox.Clear();
+            notesTextbox.ForeColor = Color.Black;
         }
 
         private void saveButton2_Click(object sender, EventArgs e)
         {
-        Notes = textBox4.Text;
-        customerName = textBox1.Text;
-        customerEmail = textBox2.Text;
+        Notes = notesTextbox.Text;
+        customerName = customerNameTextBox.Text;
+        customerEmail = customerEmailTextBox.Text;
         invoiceNumber = textBox3.Text;
             //if this doesnt work change it here
             string folderString = @"C:\Temp";
@@ -148,17 +148,17 @@ namespace AccountingSoftware
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            DateTime1 = dateTimePicker1.Value;
+            DateTime1 = dateTimeSent.Value;
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            DateTime2 = dateTimePicker2.Value;
+            DateTime2 = dateTimeDue.Value;
         }
 
         private void textBox5_Click(object sender, EventArgs e)
         {
-            textBox5.Clear();
+            invoiceReferenceLabel.Clear();
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)

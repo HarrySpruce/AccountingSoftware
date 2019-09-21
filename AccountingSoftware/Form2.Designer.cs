@@ -42,18 +42,18 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.fileSaveButton = new System.Windows.Forms.Button();
+            this.invoiceLabel = new System.Windows.Forms.Label();
+            this.customerNameTextBox = new System.Windows.Forms.TextBox();
+            this.customerEmailTextBox = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeSent = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.saveButton2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dateTimeDue = new System.Windows.Forms.DateTimePicker();
+            this.notesTextbox = new System.Windows.Forms.TextBox();
+            this.internalSaveButton = new System.Windows.Forms.Button();
+            this.invoiceReferenceLabel = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -161,48 +161,48 @@
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 3;
             // 
-            // button1
+            // fileSaveButton
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Location = new System.Drawing.Point(1143, 738);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.fileSaveButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.fileSaveButton.Location = new System.Drawing.Point(1143, 738);
+            this.fileSaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fileSaveButton.Name = "fileSaveButton";
+            this.fileSaveButton.Size = new System.Drawing.Size(112, 35);
+            this.fileSaveButton.TabIndex = 4;
+            this.fileSaveButton.Text = "Save";
+            this.fileSaveButton.UseVisualStyleBackColor = true;
+            this.fileSaveButton.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label2
+            // invoiceLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Invoice For";
+            this.invoiceLabel.AutoSize = true;
+            this.invoiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoiceLabel.Location = new System.Drawing.Point(8, 122);
+            this.invoiceLabel.Name = "invoiceLabel";
+            this.invoiceLabel.Size = new System.Drawing.Size(98, 20);
+            this.invoiceLabel.TabIndex = 5;
+            this.invoiceLabel.Text = "Invoice For";
             // 
-            // textBox1
+            // customerNameTextBox
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.Location = new System.Drawing.Point(12, 161);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 26);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "[Customer Name]";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.customerNameTextBox.AcceptsReturn = true;
+            this.customerNameTextBox.Location = new System.Drawing.Point(12, 161);
+            this.customerNameTextBox.MaxLength = 30;
+            this.customerNameTextBox.Name = "customerNameTextBox";
+            this.customerNameTextBox.Size = new System.Drawing.Size(302, 26);
+            this.customerNameTextBox.TabIndex = 6;
+            this.customerNameTextBox.Text = "[Customer Name]";
+            this.customerNameTextBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
-            // textBox2
+            // customerEmailTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 193);
-            this.textBox2.MaxLength = 30;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 26);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "[Customer Email]";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.customerEmailTextBox.Location = new System.Drawing.Point(12, 193);
+            this.customerEmailTextBox.MaxLength = 30;
+            this.customerEmailTextBox.Name = "customerEmailTextBox";
+            this.customerEmailTextBox.Size = new System.Drawing.Size(302, 26);
+            this.customerEmailTextBox.TabIndex = 7;
+            this.customerEmailTextBox.Text = "[Customer Email]";
+            this.customerEmailTextBox.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox3
             // 
@@ -224,13 +224,13 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Sent: ";
             // 
-            // dateTimePicker1
+            // dateTimeSent
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(1116, 161);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimeSent.Location = new System.Drawing.Point(1116, 161);
+            this.dateTimeSent.Name = "dateTimeSent";
+            this.dateTimeSent.Size = new System.Drawing.Size(200, 26);
+            this.dateTimeSent.TabIndex = 11;
+            this.dateTimeSent.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
@@ -241,62 +241,62 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Due: ";
             // 
-            // dateTimePicker2
+            // dateTimeDue
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(1116, 196);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 13;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dateTimeDue.Location = new System.Drawing.Point(1116, 196);
+            this.dateTimeDue.Name = "dateTimeDue";
+            this.dateTimeDue.Size = new System.Drawing.Size(200, 26);
+            this.dateTimeDue.TabIndex = 13;
+            this.dateTimeDue.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // textBox4
+            // notesTextbox
             // 
-            this.textBox4.ForeColor = System.Drawing.Color.Gray;
-            this.textBox4.Location = new System.Drawing.Point(12, 254);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1304, 169);
-            this.textBox4.TabIndex = 14;
-            this.textBox4.Text = "(Write notes or instructions here)";
-            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.notesTextbox.ForeColor = System.Drawing.Color.Gray;
+            this.notesTextbox.Location = new System.Drawing.Point(12, 254);
+            this.notesTextbox.Multiline = true;
+            this.notesTextbox.Name = "notesTextbox";
+            this.notesTextbox.Size = new System.Drawing.Size(1304, 169);
+            this.notesTextbox.TabIndex = 14;
+            this.notesTextbox.Text = "(Write notes or instructions here)";
+            this.notesTextbox.Click += new System.EventHandler(this.textBox4_Click);
             // 
-            // saveButton2
+            // internalSaveButton
             // 
-            this.saveButton2.Location = new System.Drawing.Point(1214, 429);
-            this.saveButton2.Name = "saveButton2";
-            this.saveButton2.Size = new System.Drawing.Size(102, 34);
-            this.saveButton2.TabIndex = 15;
-            this.saveButton2.Text = "Save";
-            this.saveButton2.UseVisualStyleBackColor = true;
-            this.saveButton2.Click += new System.EventHandler(this.saveButton2_Click);
+            this.internalSaveButton.Location = new System.Drawing.Point(1214, 429);
+            this.internalSaveButton.Name = "internalSaveButton";
+            this.internalSaveButton.Size = new System.Drawing.Size(102, 34);
+            this.internalSaveButton.TabIndex = 15;
+            this.internalSaveButton.Text = "Save";
+            this.internalSaveButton.UseVisualStyleBackColor = true;
+            this.internalSaveButton.Click += new System.EventHandler(this.saveButton2_Click);
             // 
-            // textBox5
+            // invoiceReferenceLabel
             // 
-            this.textBox5.Location = new System.Drawing.Point(1116, 90);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 26);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.Text = "[Invoice Reference]";
-            this.textBox5.Click += new System.EventHandler(this.textBox5_Click);
-            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            this.invoiceReferenceLabel.Location = new System.Drawing.Point(1116, 90);
+            this.invoiceReferenceLabel.Name = "invoiceReferenceLabel";
+            this.invoiceReferenceLabel.Size = new System.Drawing.Size(200, 26);
+            this.invoiceReferenceLabel.TabIndex = 16;
+            this.invoiceReferenceLabel.Text = "[Invoice Reference]";
+            this.invoiceReferenceLabel.Click += new System.EventHandler(this.textBox5_Click);
+            this.invoiceReferenceLabel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 888);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.saveButton2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.invoiceReferenceLabel);
+            this.Controls.Add(this.internalSaveButton);
+            this.Controls.Add(this.notesTextbox);
+            this.Controls.Add(this.dateTimeDue);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimeSent);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.customerEmailTextBox);
+            this.Controls.Add(this.customerNameTextBox);
+            this.Controls.Add(this.invoiceLabel);
+            this.Controls.Add(this.fileSaveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -328,17 +328,17 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button fileSaveButton;
+        private System.Windows.Forms.Label invoiceLabel;
+        private System.Windows.Forms.TextBox customerNameTextBox;
+        private System.Windows.Forms.TextBox customerEmailTextBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeSent;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button saveButton2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DateTimePicker dateTimeDue;
+        private System.Windows.Forms.TextBox notesTextbox;
+        private System.Windows.Forms.Button internalSaveButton;
+        private System.Windows.Forms.TextBox invoiceReferenceLabel;
     }
 }
