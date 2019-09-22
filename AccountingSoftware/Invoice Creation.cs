@@ -32,6 +32,9 @@ namespace AccountingSoftware
 
         public void Form2_Load(object sender, EventArgs e)
         {
+
+            // TODO: This line of code loads data into the 'users._Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.users._Users);
             //Creates a table upon form load aswell as populating the table from files located in C:\Temp
             int NumberOfLines = 50;
             string[] ListLines = new string[NumberOfLines];
@@ -69,16 +72,16 @@ namespace AccountingSoftware
             dt.Columns.Add("InvoiceDue");
             dt.Columns.Add("Notes");
 
-            dataGridView1.DataSource = dt;
-
         }
         public void Button1_Click(object sender, EventArgs e)
         {
+            
             //Saves Content to External DB
             string dsn = "DSN=AccountingSoftware";
             string insCmd = "Insert into Users(CustomerName , CustomerEmail, InvoiceNumber, InvoiceReference, InvoiceSent, InvoiceDue, Notes)Values('" + customerNameTextBox.Text + "','" + customerEmailTextBox.Text + "','" + invoiceNumberTextBox.Text + "','" + invoiceReferenceTextBox.Text + "','" + dateTimeSent.Text + "','" + dateTimeDue.Text + "','" + notesTextbox.Text + "')";
             MessageBox.Show(insCmd);
             OdbcCommand command = new OdbcCommand(insCmd);
+            invoiceTable.Refresh();
             using (OdbcConnection connection = new OdbcConnection(dsn))
             {
                 command.Connection = connection;

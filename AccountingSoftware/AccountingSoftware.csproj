@@ -94,6 +94,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TestDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Users.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +156,28 @@
     </None>
     <None Include="TestDataSet.xss">
       <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet1.xsc">
+      <DependentUpon>TestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDataSet1.xss">
+      <DependentUpon>TestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet2.xsc">
+      <DependentUpon>TestDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDataSet2.xss">
+      <DependentUpon>TestDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Users.xsc">
       <DependentUpon>Users.xsd</DependentUpon>
