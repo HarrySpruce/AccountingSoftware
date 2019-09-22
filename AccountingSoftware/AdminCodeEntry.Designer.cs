@@ -1,6 +1,6 @@
 ﻿namespace AccountingSoftware
 {
-    partial class Form4
+    partial class AdminCodeEntry
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCodeEntry));
             this.Confirm = new System.Windows.Forms.Button();
             this.adminCode = new System.Windows.Forms.TextBox();
             this.enterCodeLabel = new System.Windows.Forms.Label();

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using System.Data.OleDb;
 namespace AccountingSoftware
 {
     public partial class Form2 : Form
@@ -35,9 +35,9 @@ namespace AccountingSoftware
             int NumberOfLines = 50;
             string[] ListLines = new string[NumberOfLines];
             string[] createText = { "Harry", "Jeff", "Micheal" };
-            string path = @"C:\Temp\Names.txt";
+            string path = @".\Names.txt";
             // Create a new file     
-            using (FileStream fs = File.Create(@"C:\Temp\Names.txt"))
+            using (FileStream fs = File.Create(@".\Names.txt"))
             {
                 // Add some text to file    
                 Byte[] title = new UTF8Encoding(true).GetBytes("");
@@ -49,7 +49,7 @@ namespace AccountingSoftware
             {
                 File.WriteAllLines(path, createText, Encoding.UTF8);
             }
-            TextReader tr = new StreamReader(@"C:\Temp\Names.txt");
+            TextReader tr = new StreamReader(@".\Names.txt");
             for (int i = 1; i < NumberOfLines; i++)
             {
                 ListLines[i] = tr.ReadLine();
@@ -60,30 +60,35 @@ namespace AccountingSoftware
             DataTable dt = new DataTable();
             tr.Close();
             //creates columns in the table
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Invoice Date");
-            dt.Columns.Add("Due Date");
-            dt.Columns.Add("Order Reference");
-
-            //sets table rows to a number and imported variables from C:\temp
-            dt.Rows.Add("01", globalname1);
-            dt.Rows.Add("02", globalname2);
-            dt.Rows.Add("03", globalname3);
-            dt.Rows.Add("04", globalname4);
+            dt.Columns.Add("CustomerName");
+            dt.Columns.Add("CustomerEmail");
+            dt.Columns.Add("InvoiceNumber");
+            dt.Columns.Add("InvoiceReference");
+            dt.Columns.Add("InvoiceSent");
+            dt.Columns.Add("InvoiceDue");
+            dt.Columns.Add("Notes");
 
             dataGridView1.DataSource = dt;
 
         }
         public void Button1_Click(object sender, EventArgs e)
         {
+            //Saves Content to External DB
+            OleDbConnection con = new OleDbConnection("Data Source=Test.mdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Insert into Users(CustomerName , CustomerEmail, InvoiceNumber, InvoiceReference, InvoiceSent, InvoiceDue, Notes)Values('" + customerNameTextBox.Text + "','" + customerEmailTextBox.Text + "','" + invoiceNumberTextBox.Text + "','" + invoiceReferenceTextBox.Text + "','" + dateTimeSent.Text + "','" + dateTimeDue.Text + "','" + notesTextbox.Text + "')";
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Submitted");
+            con.Close();
             string[] createText = { globalname1 + globalname2 + globalname3 };
-            string path = @"C:\Temp\Names.txt";
+            string path = @".\Names.txt";
             if (!File.Exists(path))
             {
                 File.WriteAllLines(path, createText, Encoding.UTF8);
             }
-            TextReader tr = new StreamReader(@"C:\Temp\Names.txt");
+            TextReader tr = new StreamReader(@".\Names.txt");
         }
 
         private void textBox1_Click(object sender, System.EventArgs e)
@@ -96,7 +101,7 @@ namespace AccountingSoftware
         }
         private void textBox3_Click(object sender, EventArgs e)
         {
-            textBox3.Clear();
+            invoiceNumberTextBox.Clear();
         }
         private void textBox4_Click(object sender, EventArgs e)
         {
@@ -109,11 +114,11 @@ namespace AccountingSoftware
         Notes = notesTextbox.Text;
         customerName = customerNameTextBox.Text;
         customerEmail = customerEmailTextBox.Text;
-        invoiceNumber = textBox3.Text;
+        invoiceNumber = invoiceNumberTextBox.Text;
             //if this doesnt work change it here
             string folderString = @"C:\Temp";
             System.IO.Directory.CreateDirectory(folderString);
-            string strFilePath = @"C:\temp\testfile.csv";
+            string strFilePath = @".\testfile.csv";
         string strSeperator = ",";
         StringBuilder sbOutput = new StringBuilder();
 
@@ -143,7 +148,7 @@ namespace AccountingSoftware
 
         private void textBox5_Click(object sender, EventArgs e)
         {
-            invoiceReferenceLabel.Clear();
+            invoiceReferenceTextBox.Clear();
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -174,6 +179,11 @@ namespace AccountingSoftware
             {
                 e.Handled = true;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

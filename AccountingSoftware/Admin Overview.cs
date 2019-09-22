@@ -23,5 +23,12 @@ namespace AccountingSoftware
             string path = @"C:\Temp\userandpass.csv";
             label1.Text = System.IO.File.ReadAllText(path);
         }
+
+        private void createUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            accountCreation f5 = new accountCreation();
+            f5.ShowDialog();
+        }
     }
 }

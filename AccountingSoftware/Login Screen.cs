@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text;
 using System.Windows;
 
 namespace AccountingSoftware
@@ -37,14 +36,8 @@ namespace AccountingSoftware
             string username;
             username = "harry";
             string password;
-            string x;
             string path = @"C:\Temp\userandpass.csv";
             string usernameandpasswordfull = System.IO.File.ReadAllText(path);
-            string GetLine(string text, int lineNo)
-            {
-                string[] lines = text.Replace("\r", "").Split('\n');
-                return lines.Length >= lineNo ? lines[lineNo - 1] : null;
-            }
             password = "password";
 
             MessageBox.Show(usernameandpasswordfull);
@@ -65,15 +58,13 @@ namespace AccountingSoftware
         {
             //opens form 4 on the admin button click.
             this.Hide();
-            Form4 f4 = new Form4();
+            AdminCodeEntry f4 = new AdminCodeEntry();
             f4.ShowDialog();
         }
 
         private void createUser_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            accountCreation f5 = new accountCreation();
-            f5.ShowDialog();
+
         }
     }
 }

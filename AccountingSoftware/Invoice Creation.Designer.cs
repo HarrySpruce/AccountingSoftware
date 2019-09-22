@@ -46,14 +46,14 @@
             this.invoiceLabel = new System.Windows.Forms.Label();
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.customerEmailTextBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.invoiceNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimeSent = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimeDue = new System.Windows.Forms.DateTimePicker();
             this.notesTextbox = new System.Windows.Forms.TextBox();
             this.internalSaveButton = new System.Windows.Forms.Button();
-            this.invoiceReferenceLabel = new System.Windows.Forms.TextBox();
+            this.invoiceReferenceTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -150,6 +150,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1243, 220);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -203,16 +204,16 @@
             this.customerEmailTextBox.Text = "[Customer Email]";
             this.customerEmailTextBox.Click += new System.EventHandler(this.textBox2_Click);
             // 
-            // textBox3
+            // invoiceNumberTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(1116, 122);
-            this.textBox3.MaxLength = 20;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 26);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.Text = "[Invoice Number]";
-            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.invoiceNumberTextBox.Location = new System.Drawing.Point(1116, 122);
+            this.invoiceNumberTextBox.MaxLength = 20;
+            this.invoiceNumberTextBox.Name = "invoiceNumberTextBox";
+            this.invoiceNumberTextBox.Size = new System.Drawing.Size(200, 26);
+            this.invoiceNumberTextBox.TabIndex = 8;
+            this.invoiceNumberTextBox.Text = "[Invoice Number]";
+            this.invoiceNumberTextBox.Click += new System.EventHandler(this.textBox3_Click);
+            this.invoiceNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label3
             // 
@@ -269,29 +270,29 @@
             this.internalSaveButton.UseVisualStyleBackColor = true;
             this.internalSaveButton.Click += new System.EventHandler(this.saveButton2_Click);
             // 
-            // invoiceReferenceLabel
+            // invoiceReferenceTextBox
             // 
-            this.invoiceReferenceLabel.Location = new System.Drawing.Point(1116, 90);
-            this.invoiceReferenceLabel.Name = "invoiceReferenceLabel";
-            this.invoiceReferenceLabel.Size = new System.Drawing.Size(200, 26);
-            this.invoiceReferenceLabel.TabIndex = 16;
-            this.invoiceReferenceLabel.Text = "[Invoice Reference]";
-            this.invoiceReferenceLabel.Click += new System.EventHandler(this.textBox5_Click);
-            this.invoiceReferenceLabel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            this.invoiceReferenceTextBox.Location = new System.Drawing.Point(1116, 90);
+            this.invoiceReferenceTextBox.Name = "invoiceReferenceTextBox";
+            this.invoiceReferenceTextBox.Size = new System.Drawing.Size(200, 26);
+            this.invoiceReferenceTextBox.TabIndex = 16;
+            this.invoiceReferenceTextBox.Text = "[Invoice Reference]";
+            this.invoiceReferenceTextBox.Click += new System.EventHandler(this.textBox5_Click);
+            this.invoiceReferenceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 888);
-            this.Controls.Add(this.invoiceReferenceLabel);
+            this.Controls.Add(this.invoiceReferenceTextBox);
             this.Controls.Add(this.internalSaveButton);
             this.Controls.Add(this.notesTextbox);
             this.Controls.Add(this.dateTimeDue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimeSent);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.invoiceNumberTextBox);
             this.Controls.Add(this.customerEmailTextBox);
             this.Controls.Add(this.customerNameTextBox);
             this.Controls.Add(this.invoiceLabel);
@@ -331,13 +332,13 @@
         private System.Windows.Forms.Label invoiceLabel;
         private System.Windows.Forms.TextBox customerNameTextBox;
         private System.Windows.Forms.TextBox customerEmailTextBox;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox invoiceNumberTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimeSent;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimeDue;
         private System.Windows.Forms.TextBox notesTextbox;
         private System.Windows.Forms.Button internalSaveButton;
-        private System.Windows.Forms.TextBox invoiceReferenceLabel;
+        private System.Windows.Forms.TextBox invoiceReferenceTextBox;
     }
 }

@@ -37,7 +37,6 @@
             this.loginButton = new System.Windows.Forms.Button();
             this.adminAccessButton = new System.Windows.Forms.Button();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
-            this.createUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
             this.SuspendLayout();
@@ -111,23 +110,12 @@
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
-            // createUser
-            // 
-            this.createUser.Location = new System.Drawing.Point(251, 238);
-            this.createUser.Name = "createUser";
-            this.createUser.Size = new System.Drawing.Size(91, 35);
-            this.createUser.TabIndex = 6;
-            this.createUser.Text = "Create User";
-            this.createUser.UseVisualStyleBackColor = true;
-            this.createUser.Click += new System.EventHandler(this.createUser_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(894, 386);
-            this.Controls.Add(this.createUser);
             this.Controls.Add(this.adminAccessButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordLabel);
@@ -158,7 +146,6 @@
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button adminAccessButton;
         private System.IO.FileSystemWatcher fileSystemWatcher2;
-        private System.Windows.Forms.Button createUser;
     }
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AccountingSoftware
 {
-    public partial class Form4 : Form
+    public partial class AdminCodeEntry : Form
     {
-        public Form4()
+        public AdminCodeEntry()
         {
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
