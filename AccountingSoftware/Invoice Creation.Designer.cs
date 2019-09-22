@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,10 +53,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimeDue = new System.Windows.Forms.DateTimePicker();
             this.notesTextbox = new System.Windows.Forms.TextBox();
-            this.internalSaveButton = new System.Windows.Forms.Button();
             this.invoiceReferenceTextBox = new System.Windows.Forms.TextBox();
+            this.users = new AccountingSoftware.Users();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -144,7 +148,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.usersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 498);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
@@ -164,7 +170,7 @@
             // fileSaveButton
             // 
             this.fileSaveButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.fileSaveButton.Location = new System.Drawing.Point(1143, 738);
+            this.fileSaveButton.Location = new System.Drawing.Point(1195, 431);
             this.fileSaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fileSaveButton.Name = "fileSaveButton";
             this.fileSaveButton.Size = new System.Drawing.Size(112, 35);
@@ -260,16 +266,6 @@
             this.notesTextbox.Text = "(Write notes or instructions here)";
             this.notesTextbox.Click += new System.EventHandler(this.textBox4_Click);
             // 
-            // internalSaveButton
-            // 
-            this.internalSaveButton.Location = new System.Drawing.Point(1214, 429);
-            this.internalSaveButton.Name = "internalSaveButton";
-            this.internalSaveButton.Size = new System.Drawing.Size(102, 34);
-            this.internalSaveButton.TabIndex = 15;
-            this.internalSaveButton.Text = "Save";
-            this.internalSaveButton.UseVisualStyleBackColor = true;
-            this.internalSaveButton.Click += new System.EventHandler(this.saveButton2_Click);
-            // 
             // invoiceReferenceTextBox
             // 
             this.invoiceReferenceTextBox.Location = new System.Drawing.Point(1116, 90);
@@ -280,13 +276,22 @@
             this.invoiceReferenceTextBox.Click += new System.EventHandler(this.textBox5_Click);
             this.invoiceReferenceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
+            // users
+            // 
+            this.users.DataSetName = "Users";
+            this.users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataSource = this.users;
+            this.usersBindingSource.Position = 0;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 888);
             this.Controls.Add(this.invoiceReferenceTextBox);
-            this.Controls.Add(this.internalSaveButton);
             this.Controls.Add(this.notesTextbox);
             this.Controls.Add(this.dateTimeDue);
             this.Controls.Add(this.label4);
@@ -309,6 +314,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +345,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimeDue;
         private System.Windows.Forms.TextBox notesTextbox;
-        private System.Windows.Forms.Button internalSaveButton;
         private System.Windows.Forms.TextBox invoiceReferenceTextBox;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private Users users;
     }
 }

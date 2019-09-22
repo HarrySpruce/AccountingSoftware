@@ -94,6 +94,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Users.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login Screen.resx">
       <DependentUpon>Login Screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +146,17 @@
     </None>
     <None Include="TestDataSet.xss">
       <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Users.xsc">
+      <DependentUpon>Users.xsd</DependentUpon>
+    </None>
+    <None Include="Users.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Users.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Users.xss">
+      <DependentUpon>Users.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

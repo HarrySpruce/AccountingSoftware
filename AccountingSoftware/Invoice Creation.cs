@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Data.OleDb;
+using System.Data.Odbc;
+
 namespace AccountingSoftware
 {
     public partial class Form2 : Form
@@ -74,21 +75,17 @@ namespace AccountingSoftware
         public void Button1_Click(object sender, EventArgs e)
         {
             //Saves Content to External DB
-            OleDbConnection con = new OleDbConnection("Data Source=Test.mdb");
-            OleDbCommand cmd = con.CreateCommand();
-            con.Open();
-            cmd.CommandText = "Insert into Users(CustomerName , CustomerEmail, InvoiceNumber, InvoiceReference, InvoiceSent, InvoiceDue, Notes)Values('" + customerNameTextBox.Text + "','" + customerEmailTextBox.Text + "','" + invoiceNumberTextBox.Text + "','" + invoiceReferenceTextBox.Text + "','" + dateTimeSent.Text + "','" + dateTimeDue.Text + "','" + notesTextbox.Text + "')";
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Record Submitted");
-            con.Close();
-            string[] createText = { globalname1 + globalname2 + globalname3 };
-            string path = @".\Names.txt";
-            if (!File.Exists(path))
+            string dsn = "DSN=AccountingSoftware";
+            string insCmd = "Insert into Users(CustomerName , CustomerEmail, InvoiceNumber, InvoiceReference, InvoiceSent, InvoiceDue, Notes)Values('" + customerNameTextBox.Text + "','" + customerEmailTextBox.Text + "','" + invoiceNumberTextBox.Text + "','" + invoiceReferenceTextBox.Text + "','" + dateTimeSent.Text + "','" + dateTimeDue.Text + "','" + notesTextbox.Text + "')";
+            MessageBox.Show(insCmd);
+            OdbcCommand command = new OdbcCommand(insCmd);
+            using (OdbcConnection connection = new OdbcConnection(dsn))
             {
-                File.WriteAllLines(path, createText, Encoding.UTF8);
+                command.Connection = connection;
+                connection.Open();
+                command.ExecuteNonQuery();
             }
-            TextReader tr = new StreamReader(@".\Names.txt");
+
         }
 
         private void textBox1_Click(object sender, System.EventArgs e)
