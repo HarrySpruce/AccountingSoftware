@@ -92,7 +92,7 @@
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.Button1_Click);
+            this.loginButton.Click += new System.EventHandler(this.Login_Click);
             // 
             // adminAccessButton
             // 

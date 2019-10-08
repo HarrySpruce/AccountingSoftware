@@ -30,20 +30,22 @@ namespace AccountingSoftware
         {
 
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void Login_Click(object sender, EventArgs e)
         {
             //creates username variable and password variable, both stored as strings
             string username;
+            Dictionary<int, string> Usernames = new Dictionary<int, string>();
+            Dictionary<int, string> Passwords = new Dictionary<int, string>();
+            Usernames.Add(0, "Harry");
+            Passwords.Add(0, "password");
             username = "harry";
             string password;
             string path = @"C:\Temp\userandpass.csv";
             string usernameandpasswordfull = System.IO.File.ReadAllText(path);
             password = "password";
-
-            MessageBox.Show(usernameandpasswordfull);
             //the method of password storage will be changed in future in order for it to be more secure.
             //tests to see if the password is correct
-            if (usernameTextbox.Text.ToLower() == username && (passwordTextbox.Text == password))
+            if (usernameTextbox.Text.ToLower() == Usernames[0].ToLower() && (passwordTextbox.Text == Passwords[0].ToLower()))
             {
                 //shows that username and password are correct
                         MessageBox.Show("Username and password are Correct");
@@ -51,6 +53,10 @@ namespace AccountingSoftware
                 //opens form 3
                         Overview f3 = new Overview();
                         f3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Username and/or password is Incorrect");
             }
         }
 
@@ -60,11 +66,6 @@ namespace AccountingSoftware
             this.Hide();
             AdminCodeEntry f4 = new AdminCodeEntry();
             f4.ShowDialog();
-        }
-
-        private void createUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

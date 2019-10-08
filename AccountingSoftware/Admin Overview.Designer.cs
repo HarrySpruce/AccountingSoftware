@@ -42,9 +42,9 @@
             // 
             // createUser
             // 
-            this.createUser.Location = new System.Drawing.Point(24, 33);
+            this.createUser.Location = new System.Drawing.Point(241, 25);
             this.createUser.Name = "createUser";
-            this.createUser.Size = new System.Drawing.Size(91, 35);
+            this.createUser.Size = new System.Drawing.Size(162, 35);
             this.createUser.TabIndex = 7;
             this.createUser.Text = "Create User";
             this.createUser.UseVisualStyleBackColor = true;

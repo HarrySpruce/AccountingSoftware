@@ -35,7 +35,7 @@ namespace AccountingSoftware
 
             // TODO: This line of code loads data into the 'users._Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.users._Users);
-            //Creates a table upon form load aswell as populating the table from files located in C:\Temp
+            //Creates a table upon form load, aswell as populating the table from files located in C:\Temp
             int NumberOfLines = 50;
             string[] ListLines = new string[NumberOfLines];
             string[] createText = { "Harry", "Jeff", "Micheal" };
@@ -81,14 +81,39 @@ namespace AccountingSoftware
             string insCmd = "Insert into Users(CustomerName , CustomerEmail, InvoiceNumber, InvoiceReference, InvoiceSent, InvoiceDue, Notes)Values('" + customerNameTextBox.Text + "','" + customerEmailTextBox.Text + "','" + invoiceNumberTextBox.Text + "','" + invoiceReferenceTextBox.Text + "','" + dateTimeSent.Text + "','" + dateTimeDue.Text + "','" + notesTextbox.Text + "')";
             MessageBox.Show(insCmd);
             OdbcCommand command = new OdbcCommand(insCmd);
-            invoiceTable.Refresh();
+            invoiceTable.Update();
             using (OdbcConnection connection = new OdbcConnection(dsn))
             {
                 command.Connection = connection;
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+            invoiceTable.Update();
+            Notes = notesTextbox.Text;
+            customerName = customerNameTextBox.Text;
+            customerEmail = customerEmailTextBox.Text;
+            invoiceNumber = invoiceNumberTextBox.Text;
+            //if this doesnt work change it here
+            string folderString = @"C:\Temp";
+            System.IO.Directory.CreateDirectory(folderString);
+            string strFilePath = @".\testfile.csv";
+            string strSeperator = ",";
+            StringBuilder sbOutput = new StringBuilder();
 
+            string[][] inaOutput = new string[][]
+            {
+                new string[]{Notes},
+                new string[]{customerName},
+                new string[]{customerEmail},
+                new string[]{invoiceNumber},
+                new string[]{"************"}
+            };
+            int ilength = inaOutput.GetLength(0);
+            for (int i = 0; i < ilength; i++)
+                sbOutput.AppendLine(string.Join(strSeperator, inaOutput[i]));
+            File.AppendAllText(strFilePath, sbOutput.ToString());
+
+            invoiceTable.Update();
         }
 
         private void textBox1_Click(object sender, System.EventArgs e)
@@ -109,32 +134,6 @@ namespace AccountingSoftware
             notesTextbox.ForeColor = Color.Black;
         }
 
-        private void saveButton2_Click(object sender, EventArgs e)
-        {
-        Notes = notesTextbox.Text;
-        customerName = customerNameTextBox.Text;
-        customerEmail = customerEmailTextBox.Text;
-        invoiceNumber = invoiceNumberTextBox.Text;
-            //if this doesnt work change it here
-            string folderString = @"C:\Temp";
-            System.IO.Directory.CreateDirectory(folderString);
-            string strFilePath = @".\testfile.csv";
-        string strSeperator = ",";
-        StringBuilder sbOutput = new StringBuilder();
-
-            string[][] inaOutput = new string[][]
-            {
-                new string[]{Notes},
-                new string[]{customerName},
-                new string[]{customerEmail},
-                new string[]{invoiceNumber},
-                new string[]{"************"}
-            };
-        int ilength = inaOutput.GetLength(0);
-            for (int i = 0; i < ilength; i++)
-                sbOutput.AppendLine(string.Join(strSeperator, inaOutput[i]));
-            File.AppendAllText(strFilePath, sbOutput.ToString());
-        }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
