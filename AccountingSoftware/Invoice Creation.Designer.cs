@@ -42,6 +42,14 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceTable = new System.Windows.Forms.DataGridView();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceReferenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.users = new AccountingSoftware.Users();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,22 +66,15 @@
             this.invoiceReferenceTextBox = new System.Windows.Forms.TextBox();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new AccountingSoftware.UsersTableAdapters.UsersTableAdapter();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceReferenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.returnLogin = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -176,9 +177,56 @@
             this.invoiceTable.Location = new System.Drawing.Point(12, 498);
             this.invoiceTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invoiceTable.Name = "invoiceTable";
-            this.invoiceTable.Size = new System.Drawing.Size(1243, 220);
+            this.invoiceTable.Size = new System.Drawing.Size(1304, 220);
             this.invoiceTable.TabIndex = 2;
             this.invoiceTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // customerEmailDataGridViewTextBoxColumn
+            // 
+            this.customerEmailDataGridViewTextBoxColumn.DataPropertyName = "CustomerEmail";
+            this.customerEmailDataGridViewTextBoxColumn.HeaderText = "CustomerEmail";
+            this.customerEmailDataGridViewTextBoxColumn.Name = "customerEmailDataGridViewTextBoxColumn";
+            // 
+            // invoiceNumberDataGridViewTextBoxColumn
+            // 
+            this.invoiceNumberDataGridViewTextBoxColumn.DataPropertyName = "InvoiceNumber";
+            this.invoiceNumberDataGridViewTextBoxColumn.HeaderText = "InvoiceNumber";
+            this.invoiceNumberDataGridViewTextBoxColumn.Name = "invoiceNumberDataGridViewTextBoxColumn";
+            // 
+            // invoiceReferenceDataGridViewTextBoxColumn
+            // 
+            this.invoiceReferenceDataGridViewTextBoxColumn.DataPropertyName = "InvoiceReference";
+            this.invoiceReferenceDataGridViewTextBoxColumn.HeaderText = "InvoiceReference";
+            this.invoiceReferenceDataGridViewTextBoxColumn.Name = "invoiceReferenceDataGridViewTextBoxColumn";
+            // 
+            // invoiceSentDataGridViewTextBoxColumn
+            // 
+            this.invoiceSentDataGridViewTextBoxColumn.DataPropertyName = "InvoiceSent";
+            this.invoiceSentDataGridViewTextBoxColumn.HeaderText = "InvoiceSent";
+            this.invoiceSentDataGridViewTextBoxColumn.Name = "invoiceSentDataGridViewTextBoxColumn";
+            // 
+            // invoiceDueDataGridViewTextBoxColumn
+            // 
+            this.invoiceDueDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDue";
+            this.invoiceDueDataGridViewTextBoxColumn.HeaderText = "InvoiceDue";
+            this.invoiceDueDataGridViewTextBoxColumn.Name = "invoiceDueDataGridViewTextBoxColumn";
+            // 
+            // notesDataGridViewTextBoxColumn
+            // 
+            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
+            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
+            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            // 
+            // usersBindingSource3
+            // 
+            this.usersBindingSource3.DataMember = "Users";
+            this.usersBindingSource3.DataSource = this.usersBindingSource;
             // 
             // usersBindingSource
             // 
@@ -317,63 +365,27 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            // 
-            // customerEmailDataGridViewTextBoxColumn
-            // 
-            this.customerEmailDataGridViewTextBoxColumn.DataPropertyName = "CustomerEmail";
-            this.customerEmailDataGridViewTextBoxColumn.HeaderText = "CustomerEmail";
-            this.customerEmailDataGridViewTextBoxColumn.Name = "customerEmailDataGridViewTextBoxColumn";
-            // 
-            // invoiceNumberDataGridViewTextBoxColumn
-            // 
-            this.invoiceNumberDataGridViewTextBoxColumn.DataPropertyName = "InvoiceNumber";
-            this.invoiceNumberDataGridViewTextBoxColumn.HeaderText = "InvoiceNumber";
-            this.invoiceNumberDataGridViewTextBoxColumn.Name = "invoiceNumberDataGridViewTextBoxColumn";
-            // 
-            // invoiceReferenceDataGridViewTextBoxColumn
-            // 
-            this.invoiceReferenceDataGridViewTextBoxColumn.DataPropertyName = "InvoiceReference";
-            this.invoiceReferenceDataGridViewTextBoxColumn.HeaderText = "InvoiceReference";
-            this.invoiceReferenceDataGridViewTextBoxColumn.Name = "invoiceReferenceDataGridViewTextBoxColumn";
-            // 
-            // invoiceSentDataGridViewTextBoxColumn
-            // 
-            this.invoiceSentDataGridViewTextBoxColumn.DataPropertyName = "InvoiceSent";
-            this.invoiceSentDataGridViewTextBoxColumn.HeaderText = "InvoiceSent";
-            this.invoiceSentDataGridViewTextBoxColumn.Name = "invoiceSentDataGridViewTextBoxColumn";
-            // 
-            // invoiceDueDataGridViewTextBoxColumn
-            // 
-            this.invoiceDueDataGridViewTextBoxColumn.DataPropertyName = "InvoiceDue";
-            this.invoiceDueDataGridViewTextBoxColumn.HeaderText = "InvoiceDue";
-            this.invoiceDueDataGridViewTextBoxColumn.Name = "invoiceDueDataGridViewTextBoxColumn";
-            // 
-            // notesDataGridViewTextBoxColumn
-            // 
-            this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
-            this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
-            this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
-            // 
             // usersBindingSource2
             // 
             this.usersBindingSource2.DataMember = "Users";
             this.usersBindingSource2.DataSource = this.usersBindingSource;
             // 
-            // usersBindingSource3
+            // returnLogin
             // 
-            this.usersBindingSource3.DataMember = "Users";
-            this.usersBindingSource3.DataSource = this.usersBindingSource;
+            this.returnLogin.Location = new System.Drawing.Point(12, 734);
+            this.returnLogin.Name = "returnLogin";
+            this.returnLogin.Size = new System.Drawing.Size(162, 29);
+            this.returnLogin.TabIndex = 17;
+            this.returnLogin.Text = "Return to Login";
+            this.returnLogin.UseVisualStyleBackColor = true;
+            this.returnLogin.Click += new System.EventHandler(this.returnLogin1);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 888);
+            this.Controls.Add(this.returnLogin);
             this.Controls.Add(this.invoiceReferenceTextBox);
             this.Controls.Add(this.notesTextbox);
             this.Controls.Add(this.dateTimeDue);
@@ -393,15 +405,15 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
             this.Text = "Accounting Software";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.InvoiceCreationForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.users)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn notesDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersBindingSource2;
         private System.Windows.Forms.BindingSource usersBindingSource3;
+        private System.Windows.Forms.Button returnLogin;
     }
 }

@@ -36,45 +36,14 @@ namespace AccountingSoftware
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            int RandomNumber(int min, int max)
-            {
-                Random random = new Random();
-                return random.Next(min, max);
-            }
-            string username = usernameTextBox.Text;
-            string password = passwordTextBox.Text;
-            string path = @".\userandpass.csv";
-            int salt = RandomNumber(1, 1000);
-            string encryptedpassword = EncryptDecrypt(password, salt);
-            dict.Add("Username: ", username);
-            dict.Add("Password: ", password);
-            dict.Add("Salt: ", salt.ToString());
-            string dictcontent = dict.ToString();
-            if (!File.Exists(path))
-            {
-                File.Create(path).Dispose();
+            string newuser = usernameTextBox.Text;
+            string newpass = passwordTextBox.Text;
+            string[] both = { newuser + "," + newpass };
+            System.IO.File.AppendAllLines(@"C:\Temp\Users.txt", both);
 
-                using (TextWriter tw = new StreamWriter(path))
-                {
-                    tw.WriteLine("File Created");
-                }
-
-            }
-            else if (File.Exists(path))
-            {
-                using (TextWriter tw = new StreamWriter(path, append: true))
-                {
-                    foreach (KeyValuePair<string, string> item in dict)
-                    {
-                        tw.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
-                    }
-                }
-                MessageBox.Show("Account Created Successfully");
-            }
+            MessageBox.Show("Account Created Successfully");
         }
 
         private void Form5_Load(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace AccountingSoftware
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            string path = @"C:\Temp\userandpass.csv";
+            string path = @"C:\Temp\Users.txt";
             label1.Text = System.IO.File.ReadAllText(path);
         }
 
@@ -29,6 +29,13 @@ namespace AccountingSoftware
             this.Hide();
             accountCreation f5 = new accountCreation();
             f5.ShowDialog();
+        }
+
+        private void loginReturn2(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.Confirm = new System.Windows.Forms.Button();
             this.adminCode = new System.Windows.Forms.TextBox();
             this.enterCodeLabel = new System.Windows.Forms.Label();
+            this.returnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Confirm
@@ -65,17 +66,28 @@
             this.enterCodeLabel.TabIndex = 2;
             this.enterCodeLabel.Text = "Enter Admin Code";
             // 
-            // Form4
+            // returnLogin
+            // 
+            this.returnLogin.Location = new System.Drawing.Point(12, 270);
+            this.returnLogin.Name = "returnLogin";
+            this.returnLogin.Size = new System.Drawing.Size(114, 67);
+            this.returnLogin.TabIndex = 3;
+            this.returnLogin.Text = "Login Screen";
+            this.returnLogin.UseVisualStyleBackColor = true;
+            this.returnLogin.Click += new System.EventHandler(this.returnLogin_Click);
+            // 
+            // AdminCodeEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 349);
+            this.Controls.Add(this.returnLogin);
             this.Controls.Add(this.enterCodeLabel);
             this.Controls.Add(this.adminCode);
             this.Controls.Add(this.Confirm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form4";
+            this.Name = "AdminCodeEntry";
             this.Text = "Admin Password Entry";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +99,6 @@
         private System.Windows.Forms.Button Confirm;
         private System.Windows.Forms.TextBox adminCode;
         private System.Windows.Forms.Label enterCodeLabel;
+        private System.Windows.Forms.Button returnLogin;
     }
 }

@@ -43,7 +43,7 @@
             // 
             // usernameTextbox
             // 
-            this.usernameTextbox.Location = new System.Drawing.Point(102, 95);
+            this.usernameTextbox.Location = new System.Drawing.Point(353, 73);
             this.usernameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernameTextbox.Name = "usernameTextbox";
             this.usernameTextbox.Size = new System.Drawing.Size(148, 26);
@@ -51,7 +51,7 @@
             // 
             // passwordTextbox
             // 
-            this.passwordTextbox.Location = new System.Drawing.Point(102, 171);
+            this.passwordTextbox.Location = new System.Drawing.Point(353, 149);
             this.passwordTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passwordTextbox.Name = "passwordTextbox";
             this.passwordTextbox.Size = new System.Drawing.Size(148, 26);
@@ -61,7 +61,7 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(102, 66);
+            this.usernameLabel.Location = new System.Drawing.Point(353, 44);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(83, 20);
@@ -71,7 +71,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(102, 146);
+            this.passwordLabel.Location = new System.Drawing.Point(353, 124);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(78, 20);
@@ -85,7 +85,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(106, 238);
+            this.loginButton.Location = new System.Drawing.Point(357, 216);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(112, 35);
@@ -96,7 +96,7 @@
             // 
             // adminAccessButton
             // 
-            this.adminAccessButton.Location = new System.Drawing.Point(106, 311);
+            this.adminAccessButton.Location = new System.Drawing.Point(357, 289);
             this.adminAccessButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.adminAccessButton.Name = "adminAccessButton";
             this.adminAccessButton.Size = new System.Drawing.Size(174, 35);

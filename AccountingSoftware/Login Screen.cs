@@ -14,6 +14,7 @@ namespace AccountingSoftware
 {
     public partial class Form1 : Form
     {
+        int IncorrectAttempts = 0;
         public Form1()
         {
             InitializeComponent();
@@ -26,37 +27,42 @@ namespace AccountingSoftware
             form1.AcceptButton = loginButton;
         }
 
-        private void Password_TextChanged(object sender, EventArgs e)
-        {
 
+        private Dictionary<string, string> loadUserNames()
+        {
+            string path = @"C:\temp\Users.txt";
+            // Create a new file     
+            string[] lines = System.IO.File.ReadAllLines(path);
+
+            Dictionary<string,string> credentials = new Dictionary<string, string>();
+            foreach (string line in lines)
+            {
+               string[] bits = line.Split(',');
+               string un = bits[0];
+               string pw = bits[1];
+               credentials.Add(un, pw);
+            }
+            return credentials;
         }
+
         private void Login_Click(object sender, EventArgs e)
         {
-            //creates username variable and password variable, both stored as strings
-            string username;
-            Dictionary<int, string> Usernames = new Dictionary<int, string>();
-            Dictionary<int, string> Passwords = new Dictionary<int, string>();
-            Usernames.Add(0, "Harry");
-            Passwords.Add(0, "password");
-            username = "harry";
-            string password;
-            string path = @"C:\Temp\userandpass.csv";
-            string usernameandpasswordfull = System.IO.File.ReadAllText(path);
-            password = "password";
-            //the method of password storage will be changed in future in order for it to be more secure.
-            //tests to see if the password is correct
-            if (usernameTextbox.Text.ToLower() == Usernames[0].ToLower() && (passwordTextbox.Text == Passwords[0].ToLower()))
+            int incorrectAttempts = 0;
+
+            Dictionary<string, string> usernameDictionary = loadUserNames();
+            string pw = "";
+            usernameDictionary.TryGetValue(usernameTextbox.Text, out pw);
+            if (usernameDictionary.ContainsKey(usernameTextbox.Text) && passwordTextbox.Text == pw)
             {
-                //shows that username and password are correct
-                        MessageBox.Show("Username and password are Correct");
-                        this.Hide();
-                //opens form 3
-                        Overview f3 = new Overview();
-                        f3.ShowDialog();
+                MessageBox.Show("Correct Password Entered");
+                this.Hide();
+                Overview f3 = new Overview();
+                f3.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Username and/or password is Incorrect");
+                MessageBox.Show("Incorrect Password Entered try again");
+                incorrectAttempts = incorrectAttempts + 1;
             }
         }
 

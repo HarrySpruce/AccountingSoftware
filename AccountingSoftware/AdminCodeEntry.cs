@@ -59,6 +59,13 @@ namespace AccountingSoftware
                 f6.ShowDialog();
             }
         }
+
+        private void returnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
+        }
     }
 
 }

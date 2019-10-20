@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
 using System.Data.Odbc;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
 
 namespace AccountingSoftware
 {
@@ -30,7 +26,7 @@ namespace AccountingSoftware
             InitializeComponent();
         }
 
-        public void Form2_Load(object sender, EventArgs e)
+        public void InvoiceCreationForm_Load(object sender, EventArgs e)
         {
 
             // TODO: This line of code loads data into the 'users._Users' table. You can move, or remove it, as needed.
@@ -54,13 +50,7 @@ namespace AccountingSoftware
                 File.WriteAllLines(path, createText, Encoding.UTF8);
             }
             TextReader tr = new StreamReader(@".\Names.txt");
-            for (int i = 1; i < NumberOfLines; i++)
-            {
-                ListLines[i] = tr.ReadLine();
-            }
-            globalname1 = ListLines[1];
-            globalname2 = ListLines[2];
-            globalname3 = ListLines[3];
+
             DataTable dt = new DataTable();
             tr.Close();
             //creates columns in the table
@@ -183,6 +173,13 @@ namespace AccountingSoftware
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void returnLogin1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
         }
     }
 }
