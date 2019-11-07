@@ -33,7 +33,6 @@
             this.loginReturn = new System.Windows.Forms.Button();
             this.adminLogin = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
-            this.darkMode = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // formEditorButton
@@ -77,24 +76,12 @@
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.ExitLeave);
             // 
-            // darkMode
-            // 
-            this.darkMode.AutoSize = true;
-            this.darkMode.Location = new System.Drawing.Point(12, 388);
-            this.darkMode.Name = "darkMode";
-            this.darkMode.Size = new System.Drawing.Size(113, 24);
-            this.darkMode.TabIndex = 4;
-            this.darkMode.Text = "Dark Mode";
-            this.darkMode.UseVisualStyleBackColor = true;
-            this.darkMode.CheckedChanged += new System.EventHandler(this.darkMode_CheckedChanged);
-            // 
             // Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(462, 423);
-            this.Controls.Add(this.darkMode);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.adminLogin);
             this.Controls.Add(this.loginReturn);
@@ -105,7 +92,6 @@
             this.Text = "Overview";
             this.Load += new System.EventHandler(this.Overview_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -115,6 +101,5 @@
         private System.Windows.Forms.Button loginReturn;
         private System.Windows.Forms.Button adminLogin;
         private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.CheckBox darkMode;
     }
 }

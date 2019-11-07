@@ -34,7 +34,7 @@ namespace AccountingSoftware
         private void loginReturn2(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f1 = new Form1();
+            LoginForm f1 = new LoginForm();
             f1.ShowDialog();
         }
     }

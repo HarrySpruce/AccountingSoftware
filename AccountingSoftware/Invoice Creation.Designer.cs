@@ -35,6 +35,7 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +50,10 @@
             this.invoiceSentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceDueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.users = new AccountingSoftware.Users();
+            this.usersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.fileSaveButton = new System.Windows.Forms.Button();
             this.invoiceLabel = new System.Windows.Forms.Label();
@@ -68,11 +70,13 @@
             this.usersTableAdapter = new AccountingSoftware.UsersTableAdapters.UsersTableAdapter();
             this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.returnLogin = new System.Windows.Forms.Button();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             this.SuspendLayout();
@@ -119,9 +123,17 @@
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
             this.openToolStripMenuItem.Text = "Open";
+            // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
+            this.databaseToolStripMenuItem.Text = "Database";
             // 
             // exitToolStripMenuItem
             // 
@@ -173,13 +185,13 @@
             this.invoiceSentDataGridViewTextBoxColumn,
             this.invoiceDueDataGridViewTextBoxColumn,
             this.notesDataGridViewTextBoxColumn});
-            this.invoiceTable.DataSource = this.usersBindingSource3;
+            this.invoiceTable.DataSource = this.usersBindingSource4;
             this.invoiceTable.Location = new System.Drawing.Point(12, 498);
             this.invoiceTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invoiceTable.Name = "invoiceTable";
             this.invoiceTable.Size = new System.Drawing.Size(1304, 220);
             this.invoiceTable.TabIndex = 2;
-            this.invoiceTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.invoiceTable.VirtualMode = true;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -223,10 +235,10 @@
             this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
             // 
-            // usersBindingSource3
+            // usersBindingSource4
             // 
-            this.usersBindingSource3.DataMember = "Users";
-            this.usersBindingSource3.DataSource = this.usersBindingSource;
+            this.usersBindingSource4.DataMember = "Users";
+            this.usersBindingSource4.DataSource = this.usersBindingSource;
             // 
             // usersBindingSource
             // 
@@ -237,6 +249,11 @@
             // 
             this.users.DataSetName = "Users";
             this.users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource3
+            // 
+            this.usersBindingSource3.DataMember = "Users";
+            this.usersBindingSource3.DataSource = this.usersBindingSource;
             // 
             // label1
             // 
@@ -409,9 +426,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
             this.ResumeLayout(false);
@@ -458,5 +476,8 @@
         private System.Windows.Forms.BindingSource usersBindingSource2;
         private System.Windows.Forms.BindingSource usersBindingSource3;
         private System.Windows.Forms.Button returnLogin;
+        private System.Windows.Forms.BindingSource usersBindingSource4;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }

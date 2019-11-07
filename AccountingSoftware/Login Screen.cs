@@ -12,10 +12,11 @@ using System.Windows;
 
 namespace AccountingSoftware
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        int IncorrectAttempts = 0;
-        public Form1()
+
+        int incorrectAttempts = 0;
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -38,7 +39,7 @@ namespace AccountingSoftware
             foreach (string line in lines)
             {
                string[] bits = line.Split(',');
-               string un = bits[0];
+               string un = bits[0].ToLower();
                string pw = bits[1];
                credentials.Add(un, pw);
             }
@@ -47,22 +48,23 @@ namespace AccountingSoftware
 
         private void Login_Click(object sender, EventArgs e)
         {
-            int incorrectAttempts = 0;
-
-            Dictionary<string, string> usernameDictionary = loadUserNames();
-            string pw = "";
-            usernameDictionary.TryGetValue(usernameTextbox.Text, out pw);
-            if (usernameDictionary.ContainsKey(usernameTextbox.Text) && passwordTextbox.Text == pw)
+            if (incorrectAttempts < 5)
             {
-                MessageBox.Show("Correct Password Entered");
-                this.Hide();
-                Overview f3 = new Overview();
-                f3.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Incorrect Password Entered try again");
-                incorrectAttempts = incorrectAttempts + 1;
+                Dictionary<string, string> usernameDictionary = loadUserNames();
+                string pw = "";
+                usernameDictionary.TryGetValue(usernameTextbox.Text.ToLower(), out pw);
+                if (usernameDictionary.ContainsKey(usernameTextbox.Text.ToLower()) && passwordTextbox.Text == pw)
+                {
+                    MessageBox.Show("Correct Password Entered");
+                    this.Hide();
+                    Overview f3 = new Overview();
+                    f3.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password Entered try again");
+                    incorrectAttempts = incorrectAttempts + 1;
+                }
             }
         }
 

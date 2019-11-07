@@ -41,7 +41,7 @@ namespace AccountingSoftware
             else
             {
                 this.Hide();
-                Form1 f1 = new Form1();
+                LoginForm f1 = new LoginForm();
                 f1.ShowDialog();
             }
         }
@@ -63,7 +63,7 @@ namespace AccountingSoftware
         private void returnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f1 = new Form1();
+            LoginForm f1 = new LoginForm();
             f1.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace AccountingSoftware
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.usernameTextbox = new System.Windows.Forms.TextBox();
             this.passwordTextbox = new System.Windows.Forms.TextBox();
             this.usernameLabel = new System.Windows.Forms.Label();
@@ -43,25 +43,25 @@
             // 
             // usernameTextbox
             // 
-            this.usernameTextbox.Location = new System.Drawing.Point(353, 73);
+            this.usernameTextbox.Location = new System.Drawing.Point(14, 42);
             this.usernameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernameTextbox.Name = "usernameTextbox";
-            this.usernameTextbox.Size = new System.Drawing.Size(148, 26);
+            this.usernameTextbox.Size = new System.Drawing.Size(235, 26);
             this.usernameTextbox.TabIndex = 0;
             // 
             // passwordTextbox
             // 
-            this.passwordTextbox.Location = new System.Drawing.Point(353, 149);
+            this.passwordTextbox.Location = new System.Drawing.Point(14, 118);
             this.passwordTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passwordTextbox.Name = "passwordTextbox";
-            this.passwordTextbox.Size = new System.Drawing.Size(148, 26);
+            this.passwordTextbox.Size = new System.Drawing.Size(235, 26);
             this.passwordTextbox.TabIndex = 1;
             this.passwordTextbox.UseSystemPasswordChar = true;
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(353, 44);
+            this.usernameLabel.Location = new System.Drawing.Point(14, 13);
             this.usernameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(83, 20);
@@ -71,7 +71,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(353, 124);
+            this.passwordLabel.Location = new System.Drawing.Point(14, 93);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(78, 20);
@@ -85,7 +85,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(357, 216);
+            this.loginButton.Location = new System.Drawing.Point(18, 185);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(112, 35);
@@ -96,7 +96,7 @@
             // 
             // adminAccessButton
             // 
-            this.adminAccessButton.Location = new System.Drawing.Point(357, 289);
+            this.adminAccessButton.Location = new System.Drawing.Point(18, 258);
             this.adminAccessButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.adminAccessButton.Name = "adminAccessButton";
             this.adminAccessButton.Size = new System.Drawing.Size(174, 35);
@@ -110,12 +110,12 @@
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(894, 386);
+            this.ClientSize = new System.Drawing.Size(368, 382);
             this.Controls.Add(this.adminAccessButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordLabel);
@@ -124,9 +124,10 @@
             this.Controls.Add(this.usernameTextbox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximumSize = new System.Drawing.Size(916, 442);
-            this.MinimumSize = new System.Drawing.Size(916, 442);
-            this.Name = "Form1";
+            this.MaximumSize = new System.Drawing.Size(10000, 10000);
+            this.MinimumSize = new System.Drawing.Size(229, 400);
+            this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accounting Software";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
